@@ -3,39 +3,39 @@ package aplications;
 import java.util.List;
 
 public class Recipe {
-    public String recipename;
+    public String recipeName;
     public Ingredient [] ingredient;
-    public int preptime;
+    public int prepTime;
 
-    public Recipe(String recipename, Ingredient[] ingredient, int preptime) {
-        this.recipename = recipename;
+    public Recipe(String recipeName, Ingredient[] ingredient, int prepTime) {
+        this.recipeName = recipeName;
         this.ingredient = ingredient;
-        this.preptime = preptime;
+        this.prepTime = prepTime;
     }
 
 
-    public void setRecipename(String recipename) {
-        this.recipename = recipename;
+    public void setRecipeName(String recipeName) {
+        this.recipeName = recipeName;
     }
 
     public void setIngredient(Ingredient[] ingredient) {
         this.ingredient = ingredient;
     }
 
-    public void setPreptime(int preptime) {
-        this.preptime = preptime;
+    public void setPrepTime(int prepTime) {
+        this.prepTime = prepTime;
     }
 
-    public String getRecipename() {
-        return recipename;
+    public String getRecipeName() {
+        return recipeName;
     }
 
     public Ingredient[] getIngredient() {
         return ingredient;
     }
 
-    public int getPreptime() {
-        return preptime;
+    public int getPrepTime() {
+        return prepTime;
     }
 }
 

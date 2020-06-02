@@ -31,7 +31,11 @@
                     </argLine>-->
                     <includes>
                         <include>**/RunTests.java</include>
+                        <include>**/FakeRunner.java</include>
+                        <include>**/FakeRunner2.java</include>
                     </includes>
+                    <forkCount>2</forkCount>
+                    <reuseForks>true</reuseForks>
                 </configuration>
             </plugin>
 

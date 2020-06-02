@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class GetDataSteps {
-    public static String JSON = "src\\main\\resources\\search.json";
+    public static String JSON = "src\\test\\resources\\search.json";
     private static Search[] searches;
 
     public static Search getSearchDataFromFile(Gson gson, int condition) throws FileNotFoundException {
@@ -27,7 +27,8 @@ public class GetDataSteps {
         List<String> list = new ArrayList<> ();
         while (matcher.find ())
             list.add (matcher.group ());
-        list = list.stream ().map (s -> s.replaceAll ("\"username\": ", "")).map (s -> s.replaceAll ("\"", "")).collect (Collectors.toList ());
+        list = list.stream ().map (s -> s.replaceAll ("\"username\": ", "")).map
+                (s -> s.replaceAll ("\"", "")).collect (Collectors.toList ());
         return list;
     }
 

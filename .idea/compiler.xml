@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Inna_Romankova_project" />
+        <module name="Inna_Romankova_htp_at_project" />
       </profile>
     </annotationProcessing>
   </component>

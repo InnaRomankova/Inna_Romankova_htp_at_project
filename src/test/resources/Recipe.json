@@ -1,5 +1,5 @@
 {
-  "recipename": "Ice Cream Sundae",
+  "recipeName": "Ice Cream Sundae",
   "ingredlist": [
     {
       "quantity": 3,
@@ -14,5 +14,5 @@
       "itemdescription": " cherry"
     }
   ],
-  "preptime": 5
+  "prepTime": 5
 }
