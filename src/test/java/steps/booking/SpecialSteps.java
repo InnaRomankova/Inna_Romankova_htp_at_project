@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public class SpecialStepss {
+public class SpecialSteps {
     public static String setDays(int daysAmount) {
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DAY_OF_YEAR, daysAmount);
@@ -47,9 +47,9 @@ public class SpecialStepss {
         element.sendKeys(Keys.chord(Keys.CONTROL, "a"), City);
         //BaseSteps.findElementSendKeys(driver, "//*[@id=\"ss\"]", City);   //for new City. Madrid in text field now
         BaseSteps.findElementClick(driver, "//*[contains(@class, \"xp__input-group xp__date-time\")]");
-        BaseSteps.findElementClick(driver, String.format("//*[contains(@data-date, \"%s\")]", SpecialStepss.setDays
+        BaseSteps.findElementClick(driver, String.format("//*[contains(@data-date, \"%s\")]", SpecialSteps.setDays
                 (daysShift)));
-        BaseSteps.findElementClick(driver, String.format("//*[contains(@data-date, \"%s\")]", SpecialStepss.
+        BaseSteps.findElementClick(driver, String.format("//*[contains(@data-date, \"%s\")]", SpecialSteps.
                 setDays(daysAmount + daysShift)));  //set days
         BaseSteps.findElementClick(driver, "//*[@id=\"xp__guests__toggle\"]");
         int adultAmount = Integer.parseInt(BaseSteps.findElementGetAttribute(driver, "//*[contains(@class,\"" +

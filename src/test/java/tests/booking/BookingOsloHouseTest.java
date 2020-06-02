@@ -11,7 +11,7 @@ import org.openqa.selenium.interactions.Actions;
 import settings.ScreenMode;
 import steps.BaseSteps;
 
-import steps.booking.SpecialStepss;
+import steps.booking.SpecialSteps;
 import webDrivers.Config;
 import webDrivers.DriverManager;
 
@@ -36,9 +36,9 @@ public class BookingOsloHouseTest {
     public void booking3Test() throws InterruptedException {
         BaseSteps.findElementSendKeys(driver, "//*[@id=\"ss\"]", "Oslo");  //set City: Oslo
         BaseSteps.findElementClick(driver, "//*[contains(@class, \"xp__input-group xp__date-time\")]");
-        BaseSteps.findElementClick(driver, String.format("//*[contains(@data-date, \"%s\")]", SpecialStepss.setDays
+        BaseSteps.findElementClick(driver, String.format("//*[contains(@data-date, \"%s\")]", SpecialSteps.setDays
                 (daysShift)));
-        BaseSteps.findElementClick(driver, String.format("//*[contains(@data-date, \"%s\")]", SpecialStepss.setDays
+        BaseSteps.findElementClick(driver, String.format("//*[contains(@data-date, \"%s\")]", SpecialSteps.setDays
                 (daysAmount + daysShift)));  //set days
         BaseSteps.findElementClick(driver, "//*[@id=\"xp__guests__toggle\"]");
 
@@ -64,7 +64,7 @@ public class BookingOsloHouseTest {
         TimeUnit.SECONDS.sleep(2);
         Actions actions = new Actions(driver);
 
-        element = SpecialStepss.scriptsExecuter(element, driver, actions);
+        element = SpecialSteps.scriptsExecuter(element, driver, actions);
 
         String textColor = element.getAttribute("style");
         if (textColor.equals("color: red;"))

@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import settings.ScreenMode;
 import steps.BaseSteps;
 
-import steps.booking.SpecialStepss;
+import steps.booking.SpecialSteps;
 import webDrivers.Config;
 import webDrivers.DriverManager;
 
@@ -33,9 +33,9 @@ public class BookingParisHouseTest {
     public void booking1Test() throws InterruptedException {
         BaseSteps.findElementSendKeys(driver, "//*[@id=\"ss\"]", "Paris");  //set City: Paris
         BaseSteps.findElementClick(driver, "//*[contains(@class, \"xp__input-group xp__date-time\")]");
-        BaseSteps.findElementClick(driver, String.format("//*[contains(@data-date, \"%s\")]", SpecialStepss.setDays
+        BaseSteps.findElementClick(driver, String.format("//*[contains(@data-date, \"%s\")]", SpecialSteps.setDays
                 (daysShift)));
-        BaseSteps.findElementClick(driver, String.format("//*[contains(@data-date, \"%s\")]", SpecialStepss.setDays
+        BaseSteps.findElementClick(driver, String.format("//*[contains(@data-date, \"%s\")]", SpecialSteps.setDays
                 (daysAmount + daysShift)));  //set days
         BaseSteps.findElementClick(driver, "//*[@id=\"xp__guests__toggle\"]");
 
