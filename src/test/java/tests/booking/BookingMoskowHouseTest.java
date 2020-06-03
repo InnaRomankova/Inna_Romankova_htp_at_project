@@ -9,8 +9,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import pages.booking.MainPage;
 import steps.BaseSteps;
-import steps.booking.SpecialSteps;
 import webDrivers.Config;
 import webDrivers.DriverManager;
 
@@ -32,13 +32,8 @@ public class BookingMoskowHouseTest {
 
     @Test
     public void booking2Test() throws InterruptedException {
-        BaseSteps.findElementSendKeys(driver, "//*[@id=\"ss\"]", "Moscow");  //set City: Moscow
-        BaseSteps.findElementClick(driver, "//*[contains(@class, \"xp__input-group xp__date-time\")]");
-        BaseSteps.findElementClick(driver, String.format("//*[contains(@data-date, \"%s\")]", SpecialSteps.setDays
-                (daysShift)));
-        BaseSteps.findElementClick(driver, String.format("//*[contains(@data-date, \"%s\")]", SpecialSteps.setDays
-                (daysAmount + daysShift)));  //set days
-        BaseSteps.findElementClick(driver, "//*[contains(@type, \"submit\")]");
+        MainPage.setCityPersonRoomDates(driver, "Moscow", daysAmount, daysShift,
+                2, 0, 1);
         TimeUnit.SECONDS.sleep(3);
 
         Actions actions = new Actions (driver);

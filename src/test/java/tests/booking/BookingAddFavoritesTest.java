@@ -7,9 +7,10 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.booking.MainPage;
+import properties.PropertyPath;
 import steps.BaseSteps;
 
-import steps.booking.SpecialSteps;
 import webDrivers.Config;
 import webDrivers.DriverManager;
 
@@ -21,23 +22,23 @@ import java.util.concurrent.TimeUnit;
 public class BookingAddFavoritesTest {
     WebElement element;
     WebDriver driver;
-    String BOOKING_PATH = "src\\test\\java\\properties\\booking.properties";
     Properties properties;
     String firstHotel, secondHotel;
 
     @Before
     public void preCondition() throws IOException {
         driver = DriverManager.getDriver (Config.CHROME);
-        properties = BaseSteps.getProperties (BOOKING_PATH);
+        properties = BaseSteps.getProperties (PropertyPath.BOOKING_PATH);
     }
 
     @Test
     public void addToFavoritesTest() throws InterruptedException {
-        SpecialSteps.bookingLogIn (driver, properties);
-        TimeUnit.SECONDS.sleep (3);
-        SpecialSteps.setCityPersonRoomDates (driver, "Madrid", 5, 30, 2, 0, 1);
-        setFavoritesCheckClolor ();
-        compareHotelIndex (firstHotel, secondHotel);
+        MainPage.bookingLogIn(driver, properties);
+        TimeUnit.SECONDS.sleep(3);
+        MainPage.setCityPersonRoomDates(driver,
+                "Madrid", 5, 30, 2, 0, 1);
+        setFavoritesCheckClolor();
+        compareHotelIndex(firstHotel, secondHotel);
     }
 
     public void setFavoritesCheckClolor() throws InterruptedException {
@@ -50,7 +51,7 @@ public class BookingAddFavoritesTest {
         BaseSteps.findElementClick (driver, "//*[contains(@class, \"bui-pagination__item\")][10]");
         TimeUnit.SECONDS.sleep (6);
 
-        List<WebElement> list = driver.findElements (By.xpath ("//*[@id=\"hotellist_inner\"]/div"));
+        List<WebElement> list = driver.findElements(By.xpath("//*[@id=\"hotellist_inner\"]/div"));
         //sometimes heart is div[50], sometimes is div[51]
 
         element = BaseSteps.findElementClickReturn (driver, String.format ("//*[@id=\"hotellist_inner\"]" +
@@ -78,7 +79,6 @@ public class BookingAddFavoritesTest {
 
     @After
     public void postCondition() {
-        //BaseSteps.destroyDriver(driver);
+        BaseSteps.destroyDriver(driver);
     }
-
 }

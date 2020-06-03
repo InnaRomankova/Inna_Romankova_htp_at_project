@@ -6,8 +6,9 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.booking.MainPage;
+import properties.PropertyPath;
 import steps.BaseSteps;
-import steps.booking.SpecialSteps;
 import webDrivers.Config;
 import webDrivers.DriverManager;
 
@@ -20,7 +21,6 @@ import java.util.concurrent.TimeUnit;
 public class BookingCheckHeadTest {
     WebElement element;
     WebDriver driver;
-    String BOOKING_PATH = "src\\test\\java\\properties\\booking.properties";
     Properties properties;
     List<WebElement> list;
     List<WebElement> bigList;
@@ -28,13 +28,13 @@ public class BookingCheckHeadTest {
     @Before
     public void preCondition() throws IOException {
         driver = DriverManager.getDriver(Config.CHROME);
-        properties = BaseSteps.getProperties(BOOKING_PATH);
+        properties = BaseSteps.getProperties(PropertyPath.BOOKING_PATH);
         bigList = new ArrayList<> ();
     }
 
     @Test
     public void addToFavoritesTest() throws InterruptedException {
-        SpecialSteps.bookingLogIn(driver, properties);
+        MainPage.bookingLogIn(driver, properties);
         TimeUnit.SECONDS.sleep(4);
         addToList("//*[@id=\"top\"]/div/img");
         addToList("//*[@id=\"user_form\"]/ul/li");
