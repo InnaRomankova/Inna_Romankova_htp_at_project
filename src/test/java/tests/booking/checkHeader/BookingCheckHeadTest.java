@@ -4,6 +4,8 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -12,6 +14,7 @@ import org.openqa.selenium.WebElement;
 import pages.booking.MainPage;
 import properties.PropertyPath;
 import steps.BaseSteps;
+import steps.api.UsersApiSteps;
 import webDrivers.Config;
 import webDrivers.GetDriver;
 
@@ -27,6 +30,8 @@ public class BookingCheckHeadTest {
     Properties properties;
     List<WebElement> list;
     List<WebElement> bigList;
+    private static final Logger LOGGER = LogManager.getLogger(UsersApiSteps.class);
+
     @Before
     public void preCondition() throws IOException {
         driver = GetDriver.getWebDriver(Config.CHROME);
@@ -36,6 +41,7 @@ public class BookingCheckHeadTest {
 
     @cucumber.api.java.Before
     public void pre_condition() throws IOException {
+        LOGGER.info("Start test");
         driver = GetDriver.getWebDriver(Config.CHROME);
         properties = BaseSteps.getProperties(PropertyPath.BOOKING_PATH);
         bigList = new ArrayList<>();
@@ -85,6 +91,7 @@ public class BookingCheckHeadTest {
     @cucumber.api.java.After
     public void post_condition() {
         BaseSteps.destroyDriver(driver);
+        LOGGER.info("Finish test");
     }
 
     @After

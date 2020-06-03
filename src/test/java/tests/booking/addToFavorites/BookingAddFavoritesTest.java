@@ -4,6 +4,8 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -12,6 +14,7 @@ import org.openqa.selenium.WebElement;
 import pages.booking.MainPage;
 import properties.PropertyPath;
 import steps.BaseSteps;
+import steps.api.UsersApiSteps;
 import webDrivers.Config;
 import webDrivers.GetDriver;
 
@@ -25,6 +28,7 @@ public class BookingAddFavoritesTest {
     WebDriver driver;
     Properties properties;
     String firstHotel, secondHotel;
+    private static final Logger LOGGER = LogManager.getLogger(UsersApiSteps.class);
 
     @Before
     public void preCondition() throws IOException {
@@ -36,6 +40,7 @@ public class BookingAddFavoritesTest {
     public void pre_condition() throws IOException {
         driver = GetDriver.getWebDriver (Config.CHROME);
         properties = BaseSteps.getProperties (PropertyPath.BOOKING_PATH);
+        LOGGER.info("Start test");
     }
 
     @Given("I go to booking.com")
@@ -149,5 +154,6 @@ public class BookingAddFavoritesTest {
     @cucumber.api.java.After
     public void post_condition() {
         BaseSteps.destroyDriver (driver);
+        LOGGER.info("Finish test");
     }
 }

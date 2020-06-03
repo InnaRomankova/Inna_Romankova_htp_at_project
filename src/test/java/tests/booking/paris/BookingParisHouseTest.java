@@ -5,12 +5,15 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import pages.booking.MainPage;
 import settings.ScreenMode;
 import steps.BaseSteps;
+import steps.api.UsersApiSteps;
 import webDrivers.Config;
 import webDrivers.GetDriver;
 
@@ -24,10 +27,12 @@ public class BookingParisHouseTest {
     WebDriver driver;
     String maxPrice;
     int firstOneDayPrice;
+    private static final Logger LOGGER = LogManager.getLogger(UsersApiSteps.class);
 
     @Before
     public void preCondition() {
         driver = GetDriver.getWebDriver(Config.CHROME);
+        LOGGER.info("Start Test");
     }
 
     @Given("I go to booking.com")
@@ -83,5 +88,6 @@ public class BookingParisHouseTest {
     @After
     public void postCondition() {
         BaseSteps.destroyDriver(driver);
+        LOGGER.info("Finish test");
     }
 }

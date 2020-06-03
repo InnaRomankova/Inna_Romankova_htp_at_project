@@ -4,6 +4,8 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -13,6 +15,7 @@ import pages.booking.MainPage;
 import properties.PropertyPath;
 import steps.BaseSteps;
 import steps.MailSteps;
+import steps.api.UsersApiSteps;
 import steps.trashmail.TrashMailNewUser;
 import webDrivers.Config;
 import webDrivers.GetDriver;
@@ -26,6 +29,7 @@ public class BookingNewUserTest {
     WebElement element;
     WebDriver driver;
     Properties properties;
+    private static final Logger LOGGER = LogManager.getLogger(UsersApiSteps.class);
 
     @Before
     public void preCondition() throws IOException, InterruptedException {
@@ -37,7 +41,7 @@ public class BookingNewUserTest {
     @cucumber.api.java.Before
     public void pre_condition() {
         driver = GetDriver.getWebDriver (Config.CHROME);
-
+        LOGGER.info("Start test");
     }
 
     @Given("I go to trashmail.com")
@@ -120,6 +124,7 @@ public class BookingNewUserTest {
     @cucumber.api.java.After
     public void post_condition() {
         BaseSteps.destroyDriver (driver);
+        LOGGER.info("Finish test");
     }
 
     @After
