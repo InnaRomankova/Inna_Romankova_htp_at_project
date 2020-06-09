@@ -25,10 +25,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.21.0</version>
                 <configuration>
-                    <!--<testFailureIgnore>true</testFailureIgnore>
-                    <argLine>
-                        -Dcucumber.options="&#45;&#45;plugin ru.yandex.qatools.allure.cucumberjvm.AllureReporter"
-                    </argLine>-->
                     <includes>
                         <include>**/RunTests.java</include>
                         <include>**/FakeRunner.java</include>
@@ -39,30 +35,9 @@
                 </configuration>
             </plugin>
 
-            <!-- <plugin>
-                 <groupId>org.eclipse.jetty</groupId>
-                 <artifactId>jetty-maven-plugin</artifactId>
-                 <version>9.4.28.v20200408</version>
-                 <configuration>
-                     <supportedPackagings>jar</supportedPackagings>
-                     <webAppSourceDirectory>${project.build.directory}/site/allure-maven-plugin</webAppSourceDirectory>
-                     <stopKey>stop</stopKey>
-                     <stopPort>1234</stopPort>
-                 </configuration>
-             </plugin>-->
         </plugins>
     </build>
 
-    <!-- <reporting>
-         <excludeDefaults>true</excludeDefaults>
-         <plugins>
-             <plugin>
-                 <groupId>ru.yandex.qatools.allure</groupId>
-                 <artifactId>allure-maven-plugin</artifactId>
-                 <version>2.5</version>
-             </plugin>
-         </plugins>
-     </reporting>-->
 
     <dependencies>
         <dependency>
