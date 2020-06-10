@@ -32,7 +32,7 @@ public class DriverManager {
     }
 
     private static WebDriver getChromeDriver() {
-        System.setProperty("webdriver.chrome.driver", "extra/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         System.setProperty("webdriver.chrome.silentOutput", "true");
         return new ChromeDriver();
     }
