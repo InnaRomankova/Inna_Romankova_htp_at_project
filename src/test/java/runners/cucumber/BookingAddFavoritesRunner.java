@@ -15,5 +15,5 @@ import org.junit.runner.RunWith;
         snippets = SnippetType.CAMELCASE
         // strict = false
 )
-public class CucumberBookingAddFavoritesRunner {
+public class BookingAddFavoritesRunner {
 }
