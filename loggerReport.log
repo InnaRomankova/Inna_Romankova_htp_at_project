@@ -1,0 +1,38 @@
+16:40:57,044 DEBUG main MyDriver:getProperties:43 - FileInputStream get properties from the file
+16:40:57,059 DEBUG main MyDriver:getProperties:43 - FileInputStream get properties from the file
+16:41:07,253 DEBUG main MyDriver:getProperties:43 - FileInputStream get properties from the file
+16:41:41,515  INFO main MyDriver:followTheLink:54 - Driver open website.
+16:41:49,720  INFO main LoginAppBlankField:leftBlankField:43 - User lefts blank login field.
+16:41:49,881  INFO main LoginAppBlankField:seExpMessage:55 - Recommendation message is shown.
+16:41:49,884 DEBUG main MyDriver:getProperties:43 - FileInputStream get properties from the file
+16:41:49,891 DEBUG main MyDriver:getProperties:43 - FileInputStream get properties from the file
+16:41:49,902 DEBUG main MyDriver:getProperties:43 - FileInputStream get properties from the file
+16:41:56,561  INFO main MyDriver:followTheLink:54 - Driver open website.
+16:42:08,792  INFO main LoginAppBlankField:leftBlankField:47 - User lefts blank login field.
+16:42:08,894  INFO main LoginAppBlankField:seExpMessage:55 - Recommendation message is shown.
+16:42:48,043 DEBUG main MyDriver:getProperties:43 - FileInputStream get properties from the file
+16:42:48,058 DEBUG main MyDriver:getProperties:43 - FileInputStream get properties from the file
+16:42:58,044 DEBUG main MyDriver:getProperties:43 - FileInputStream get properties from the file
+16:43:31,785  INFO main MyDriver:followTheLink:54 - Driver open website.
+16:43:41,032  INFO main LoginAppNoSuchUser:loginAsUnregisteredUser:43 - User login as unregistered user.
+16:43:41,181  INFO main LoginAppNoSuchUser:checkValidationMessage:49 - User see validation message.
+17:01:30,626 DEBUG main MyDriver:getProperties:43 - FileInputStream get properties from the file
+17:01:30,626 DEBUG main MyDriver:getProperties:43 - FileInputStream get properties from the file
+17:01:41,585 DEBUG main MyDriver:getProperties:43 - FileInputStream get properties from the file
+17:02:19,706  INFO main MyDriver:followTheLink:54 - Driver open website.
+17:02:28,724  INFO main LoginApp:login:43 - User login with login and password
+17:02:28,883  INFO main LoginApp:checkMyLevelInUpperRightCorner:49 - User can sees Red Carpet Club level in upper right corner
+17:03:01,848 DEBUG main MyDriver:getProperties:43 - FileInputStream get properties from the file
+17:03:01,863 DEBUG main MyDriver:getProperties:43 - FileInputStream get properties from the file
+17:03:12,323 DEBUG main MyDriver:getProperties:43 - FileInputStream get properties from the file
+17:03:40,892  INFO main MyDriver:followTheLink:54 - Driver open website.
+17:03:44,059  INFO main SearchMovieFailed:searchForWord:48 - Search started forStar Mediaword
+17:03:52,425  INFO main SearchMovieFailed:searchListItems:55 - User sees list of movies is displayed
+17:03:57,612 DEBUG main MyDriver:findElementClick:58 - Driver find element and click on it
+17:04:30,355 DEBUG main MyDriver:getProperties:43 - FileInputStream get properties from the file
+17:04:30,355 DEBUG main MyDriver:getProperties:43 - FileInputStream get properties from the file
+17:04:40,893 DEBUG main MyDriver:getProperties:43 - FileInputStream get properties from the file
+17:05:12,920  INFO main MyDriver:followTheLink:54 - Driver open website.
+17:05:16,059  INFO main SearchMoviePassed:searchForWord:45 - User searches forA Star Is Born word
+17:05:24,592  INFO main SearchMoviePassed:searchResult:52 - User sees the list of movie items
+17:05:29,670  INFO main SearchMoviePassed:checkEachItemNameOrDescriptionContainsWord:59 - User checks sure each item name or description contains searchA Star Is Born  word
